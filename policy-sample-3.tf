@@ -9,7 +9,7 @@ resource "azurerm_resource_group_policy_assignment" "built_in_assignment" {
 
   parameters = <<PARAMS
     {
-      "allowedLocations": {
+      "listOfAllowedLocations": {
         "value": ["westeurope","northeurope"]
       }
     }
