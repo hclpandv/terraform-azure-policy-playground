@@ -1,3 +1,6 @@
+#-------------------------------------
+# Policy definition
+#-------------------------------------
 resource "azurerm_policy_definition" "example" {
   name         = "only-deploy-in-westeurope"
   policy_type  = "Custom"
@@ -18,20 +21,11 @@ resource "azurerm_policy_definition" "example" {
   }
 POLICY_RULE
 }
-
+#-------------------------------------
+# Policy assignment to RG
+#-------------------------------------
 resource "azurerm_resource_group_policy_assignment" "example" {
-  name                 = "example"
+  name                 = "only-deploy-in-westeurope-assignment"
   resource_group_id    = data.azurerm_resource_group.main.id
   policy_definition_id = azurerm_policy_definition.example.id
-
-#   parameters = <<PARAMS
-#     {
-#       "tagName": {
-#         "value": "Business Unit"
-#       },
-#       "tagValue": {
-#         "value": "BU"
-#       }
-#     }
-# PARAMS
 }
