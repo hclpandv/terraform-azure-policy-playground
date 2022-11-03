@@ -5,7 +5,7 @@ resource "azurerm_policy_definition" "main" {
   name         = "pol-def-ccoe-allowed-resource-locations"
   policy_type  = "Custom"
   mode         = "All"
-  display_name = "only-deploy-in-westeurope-policy-definition"
+  display_name = "pol-def-ccoe-allowed-resource-locations"
   policy_rule  = file("${path.module}/custom-policies/resource-location/policy-rule.json")
   parameters   = file("${path.module}/custom-policies/resource-location/policy-parameters.json")
 }
