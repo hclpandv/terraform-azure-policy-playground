@@ -6,8 +6,8 @@ resource "azurerm_policy_definition" "main" {
   policy_type  = "Custom"
   mode         = "All"
   display_name = "pol-def-ccoe-allowed-resource-locations"
-  policy_rule  = file("${path.module}/custom-policies/resource-location/policy-rule.json")
-  parameters   = file("${path.module}/custom-policies/resource-location/policy-parameters.json")
+  policy_rule  = file("${path.module}/custom-policies/general/resource-location/policy-rule.json")
+  parameters   = file("${path.module}/custom-policies/general/resource-location/policy-parameters.json")
 }
 #-------------------------------------
 # Policy assignment to RG
