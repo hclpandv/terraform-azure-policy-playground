@@ -13,7 +13,7 @@ resource "azurerm_policy_definition" "main" {
 # Policy assignment to RG
 #-------------------------------------
 resource "azurerm_resource_group_policy_assignment" "main" {
-  name                 = "pol-ass-ccoe-allowed-resource-locations-${data.azurerm_resource_group.main.name}"
+  name                 = "pol-ass-ccoe-allowed-resource-locations-RG" # Azure Limitation 64 chars
   resource_group_id    = data.azurerm_resource_group.main.id
   policy_definition_id = azurerm_policy_definition.main.id
 

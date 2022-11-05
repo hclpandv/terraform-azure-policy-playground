@@ -25,7 +25,7 @@ POLICY_RULE
 # Policy assignment to RG
 #-------------------------------------
 resource "azurerm_resource_group_policy_assignment" "example" {
-  name                 = "pol-ass-ccoe-allow-resource-only-in-westeurope-${data.azurerm_resource_group.main.name}"
+  name                 = "pol-ass-ccoe-allow-resource-only-in-westeurope-RG" # Azure Limitation 64 chars
   resource_group_id    = data.azurerm_resource_group.main.id
   policy_definition_id = azurerm_policy_definition.example.id
 }
