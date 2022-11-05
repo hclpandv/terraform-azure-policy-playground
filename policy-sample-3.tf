@@ -2,7 +2,7 @@
 # Built-In Policy assignment to RG
 #-------------------------------------
 resource "azurerm_resource_group_policy_assignment" "built_in_assignment_01" {
-  name                 = "pol-ass-built-in-allowed-virtual-machine-size-SKUs"
+  name                 = "pol-ass-ccoe-built-in-allowed-virtual-machine-size-SKUs-${data.azurerm_resource_group.main.name}"
   resource_group_id    = data.azurerm_resource_group.main.id
   policy_definition_id = local.policy_definition_map.Allowed_virtual_machine_size_SKUs
   parameters = jsonencode({
@@ -13,7 +13,7 @@ resource "azurerm_resource_group_policy_assignment" "built_in_assignment_01" {
 }
 
 resource "azurerm_resource_group_policy_assignment" "built_in_assignment_02" {
-  name                 = "pol-ass-built-in-allowed-resource-locations"
+  name                 = "pol-ass-ccoe-built-in-allowed-resource-locations--${data.azurerm_resource_group.main.name}"
   resource_group_id    = data.azurerm_resource_group.main.id
   policy_definition_id = data.azurerm_policy_definition.allowed_locations_policy_definitions.id
   parameters = jsonencode({

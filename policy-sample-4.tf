@@ -19,7 +19,7 @@ locals {
 #-------------------------------------------
 resource "azurerm_resource_group_policy_assignment" "built_in_assignments" {
   for_each             = local.list_of_rg_ids
-  name                 = "pol-ass-built-in-allowed-virtual-machine-size-SKUs"
+  name                 = "pol-ass-ccoe-built-in-allowed-virtual-machine-size-SKUs-${element(split("/",each.key),length(split("/",each.key))-1)}"
   resource_group_id    = each.key
   policy_definition_id = local.policy_definition_map.Allowed_virtual_machine_size_SKUs
   parameters = jsonencode({
