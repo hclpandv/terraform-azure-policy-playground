@@ -5,12 +5,12 @@ terraform {
       source = "hashicorp/azurerm"
     }
   }
-  backend "azurerm" {
-    resource_group_name  = "TerraformStateRG"
-    storage_account_name = "tfstate1395347833"
-    container_name       = "tfstate01"
-    key                  = "terraform.tfstate"
-  }
+  # backend "azurerm" {
+  #   resource_group_name  = "TerraformStateRG"
+  #   storage_account_name = "tfstate1395347833"
+  #   container_name       = "tfstate01"
+  #   key                  = "terraform.tfstate"
+  # }
 }
 
 #----Tell terraform to use Az cli auth
