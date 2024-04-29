@@ -1,0 +1,5 @@
+{
+    "allowedLocations": {
+      "value": ["westeurope","northeurope", "eastasia"]
+    }
+}
